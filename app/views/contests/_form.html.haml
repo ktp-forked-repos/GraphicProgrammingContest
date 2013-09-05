@@ -1,0 +1,10 @@
+= form_for @contest do |f|
+  - if @contest.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@contest.errors.count, "error")} prohibited this contest from being saved:"
+      %ul
+        - @contest.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'
